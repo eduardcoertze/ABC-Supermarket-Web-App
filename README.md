@@ -5,4 +5,7 @@ The application allows ABC supermarket's website administrators to load items (w
 
 # What I Learnt
 
-* 
+* Microsoft Azure Blob and Table storage.
+* The Model–View–Controller design pattern.
+* The Microsoft Azure Portal.
+* HttpPost and HttpGet requests
