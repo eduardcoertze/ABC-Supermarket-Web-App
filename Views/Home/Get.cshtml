@@ -1,0 +1,53 @@
+﻿@model List<_20112255.CLDV6212.Models.Product>
+@{
+    ViewBag.Title = "Get";
+}
+<br />
+<br />
+<div>
+    <a href="@Url.Action("Index", "Home")">Add new product</a>
+</div>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product Picture</th>
+                <th>Product Name</th>
+                <th>Product Description</th>
+                <th>Product Price</th>
+                <th>Manage</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (_20112255.CLDV6212.Models.Product ProductObj in Model)
+            {
+                <tr>
+                    <td>
+                        <img class="profilePicture" src="@ProductObj.FilePath"
+                             alt="@ProductObj.FilePath" />
+                    </td>
+                    <td>@ProductObj.productName</td>
+                    <td>@ProductObj.productDescription</td>
+                    <td>@ProductObj.productPrice</td>
+                    <td>
+                        <span>
+                            @Html.ActionLink("Edit", "Index", "Home", new
+                            {
+                                id =
+                 ProductObj.RowKey
+                            }, new { })
+                    </span>
+                    <span>
+                        @Html.ActionLink("Delete", "Delete", "Home", new
+                        {
+                            id =
+             ProductObj.RowKey
+                        }, new { })
+                </span>
+            </td>
+        </tr>
+    }
+        </tbody>
+    </table>
+</div>
+

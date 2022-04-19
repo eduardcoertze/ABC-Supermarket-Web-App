@@ -1,0 +1,49 @@
+﻿@model _20112255.CLDV6212.Models.Product
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<br />
+<div>
+    <a href="@Url.Action("Get", "Home")">Product Details</a>
+</div>
+<div>
+    @using (Html.BeginForm("Index", "Home", new { id = Model.RowKey},
+   FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <fieldset>
+            <legend>Add new product</legend>
+            <body style="background-color:lightgray">
+                <ol>
+                    <li style="padding-left:1em">
+                        <p style="font-family:georgia,garamond,serif;fontsize:16px;font-style:normal;">
+                            <label>Product Name</label>
+                        </p>
+                        <input type="text" name="ProductName" required="required"
+                               value="@Model.productName" />
+                    </li>
+                    <li style="padding-left:1em">
+                        <p style="font-family:georgia,garamond,serif;fontsize:16px;font-style:normal;">
+                            <label>Product Description</label>
+                        </p>
+                        <input type="text" name="ProductDescription" required="required"
+                               value="@Model.productDescription" />
+                    </li>
+                    <li style="padding-left:1em">
+                        <p style="font-family:georgia,garamond,serif;fontsize:16px;font-style:normal;">
+                            <label>Product Price</label>
+                        </p>
+                        <input type="text" name="ProductPrice" required="required"
+                               value="@Model.productPrice" />
+                    </li>
+                    <li style=" padding-left: 1em">
+                        <p style="font-family:georgia,garamond,serif;fontsize:16px;font-style:normal;">
+                            <label>Product Picture</label>
+                        </p>
+                        <input type="file" name="uploadFile" />
+                    </li>
+                </ol>
+                <input type="submit" value="Submit" />
+        </fieldset>
+    }
+</div>
